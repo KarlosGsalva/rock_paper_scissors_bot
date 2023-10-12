@@ -14,14 +14,14 @@ async def main():
     # конфигурируем логгер
     logging.basicConfig(
         level=logging.INFO,
-        format='%(filename)s:%(lineno)d #%(levellname)-8s'
+        format='%(filename)s:%(lineno)d #%(levelname)-8s '
                '[%(asctime)s] - %(name)s - %(message)s')
 
     # вывод в консоль информацию о начале запуска бота
     logger.info('Starting bot')
 
     # загружаем конфиг в переменную config
-    config = load_config()
+    config: Config = load_config()
 
     # инициализация бота и диспетчера
     bot = Bot(config.tg_bot.token, parse_mode='HTML')
